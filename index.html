@@ -34,7 +34,6 @@
         </div>
         <script>
             var itemY = 71;
-           
             var canvasHeight = 48;
             var data = {
                 2000: 10917.48,
@@ -48,18 +47,26 @@
             var c=document.getElementById("myCanvas");
             var ctx=c.getContext("2d");
             var counter = 1;
-            var itemX; 
+            var itemX, lastY, firstX; 
             ctx.strokeStyle = 'blue';
             ctx.moveTo(0,24);
             for (var prop in data) {
                 if(counter == 1){
-                    itemX = 24;
+                    itemX = firstX = 24;
                 }else{
-                   itemX = (data[prop] > itemX) ? itemX - 2 : itemX + 2; 
+                    itemX = (data[prop] > itemX) ? itemX - 2 : itemX + 2; 
+                    lastY = itemY*counter;
                 }
-                ctx.quadraticCurveTo(itemY, itemY, itemY*counter,itemX);
+                //ctx.quadraticCurveTo(itemX, (itemY*counter)/3, itemY*counter,itemX);
+                ctx.lineTo(itemY*counter,itemX);
+                
                 counter++;
             }
+            ctx.lineTo(lastY, 48);
+            ctx.lineTo(0, 48);
+            ctx.lineTo(0, firstX);
+            ctx.fillStyle = 'blue';
+            ctx.fill();
             ctx.stroke();
         </script>
     </body>
