@@ -42,27 +42,18 @@
                 2009: 11282.76,
                 2010: 10000.5,
                 2011: 11312.16
-            }
-            
+            }           
             var c=document.getElementById("myCanvas");
             var ctx=c.getContext("2d");
             var counter = 1;
             var itemX, lastY, firstX; 
             ctx.strokeStyle = 'blue';
-            ctx.moveTo(0,24);
+            ctx.moveTo(0,44);
             for (var prop in data) {
-//                if(counter == 1){
-//                    itemX = firstX = 24;
-//                }else{
-//                    itemX = (data[prop] > itemX) ? itemX - 2 : itemX + 2; 
-//                    lastY = itemY*counter;
-//                }
-                
-                itemX = rangeCalc(data[prop]);
-            
-                //ctx.quadraticCurveTo(itemX, (itemY*counter)/3, itemY*counter,itemX);
-                ctx.lineTo(itemY*counter,itemX);
-                
+                itemX = opisitNum(rangeCalc(Math.round(data[prop])));
+                console.log(itemX);
+                lastY = itemY*counter;
+                ctx.lineTo(itemY*counter,itemX);             
                 counter++;
             }
             ctx.lineTo(lastY, 48);
@@ -74,6 +65,10 @@
             
             function rangeCalc(price){
                 return Math.round(((price - 10000)/2000)*40);               
+            }
+            
+            function opisitNum(num){
+                return (48 - num)
             }
         </script>
     </body>
