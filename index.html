@@ -1,19 +1,10 @@
-<!doctype html>
-<html>
+<!DOCTYPE html>
+<html lang="en">
     <head>
+        <meta charset="utf-8">
+        <title>Canvas Primer - Example: Using gradients</title>
+        <link href="main.css" rel="stylesheet" type="text/css" />
         <style>
-            body {
-                margin: 0px;
-                padding: 0px;
-                width:100%;
-                background-color: #353535;
-            }
-            .wrapp{
-                width:600px;
-                height: 250px;
-                margin: 0px auto;
-                position: relative;
-            }
             #myCanvas {
                 position: absolute;
                 left:117px;
@@ -22,15 +13,30 @@
             }
             .img_bg {
                 position: absolute;
-                left:0;
-                top:0;
+                left:107px;
+                top:123px;
             }
         </style>
     </head>
     <body>
-        <div class="wrapp">
-            <canvas id="myCanvas" width="426" height="48"></canvas>
-            <img class="img_bg" src="img/img.png" />
+        <div id="main">
+            <div id="title">Greece statistics about</div>
+            <div id="basic_categories">
+                <div class="basic_category_item">POPULATION</div>
+                <div class="basic_category_item">GDP</div>
+                <div class="basic_category_item">TRADE BALANCE</div>
+                <div class="basic_category_item">EMPLOYMENT RATE</div>
+                <div class="basic_category_item">UNEMPLOYMENT RATE</div>
+            </div>
+            <div id="main_banner">
+                <div id="vertical_categories">
+                    <div class="vertical_categories_item">TOTAL</div>
+                    <div class="vertical_categories_item">YOUTH</div>
+                    <div class="vertical_categories_item">ELDERS</div>
+                </div>
+                <canvas id="myCanvas" width="426" height="48"></canvas>
+                <img class="img_bg" src="img/image.png" />
+            </div>
         </div>
         <script>
             var itemY = 71;
@@ -40,7 +46,7 @@
                 2005: 11103.96,
                 2008: 11237.09,
                 2009: 11282.76,
-                2010: 10000.5,
+                2010: 11307.5,
                 2011: 11312.16
             }           
             var c=document.getElementById("myCanvas");
