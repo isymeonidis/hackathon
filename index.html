@@ -51,12 +51,15 @@
             ctx.strokeStyle = 'blue';
             ctx.moveTo(0,24);
             for (var prop in data) {
-                if(counter == 1){
-                    itemX = firstX = 24;
-                }else{
-                    itemX = (data[prop] > itemX) ? itemX - 2 : itemX + 2; 
-                    lastY = itemY*counter;
-                }
+//                if(counter == 1){
+//                    itemX = firstX = 24;
+//                }else{
+//                    itemX = (data[prop] > itemX) ? itemX - 2 : itemX + 2; 
+//                    lastY = itemY*counter;
+//                }
+                
+                itemX = rangeCalc(data[prop]);
+            
                 //ctx.quadraticCurveTo(itemX, (itemY*counter)/3, itemY*counter,itemX);
                 ctx.lineTo(itemY*counter,itemX);
                 
@@ -68,6 +71,10 @@
             ctx.fillStyle = 'blue';
             ctx.fill();
             ctx.stroke();
+            
+            function rangeCalc(price){
+                return Math.round(((price - 10000)/2000)*40);               
+            }
         </script>
     </body>
 </html>
