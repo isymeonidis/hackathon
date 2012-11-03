@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                width:100%;
+                background-color: #e0e0e0;
+            }
+            .wrapp{
+                width:800px;
+                height: 400px;
+                margin: 0px auto;
+                position: relative;
+            }
+            #myCanvas {
+                border: 1px solid #9C9898;
+                position: absolute;
+                left:0;
+                top:0;
+                background-color:#fff;
+            }
+            #myCanvas1 {
+                border: 1px solid #9C9898;
+                position: absolute;
+                left:0;
+                top:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapp">
+            <canvas id="myCanvas" width="800" height="400"></canvas>
+            <canvas id="myCanvas1" width="800" height="400"></canvas> 
+        </div>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+            context.font = "bold 100px Helvetica";
+            context.fillText("POPULATION", 100, 100);
+            context.clip();
+            context.fillStyle = "#ff0000";
+            context.fillRect(10,10,150,75);
+            
+            var canvas1 = document.getElementById('myCanvas1');
+            var ctx = canvas1.getContext('2d');
+            ctx.beginPath();
+            
+            ctx.moveTo(100, 50);
+            // line 1
+            ctx.lineTo(200, 100);
+            // quadratic curve
+            ctx.quadraticCurveTo(230, 200, 250, 120);
+            // bezier curve
+            ctx.bezierCurveTo(290, -40, 300, 200, 400, 150);
+            // line 2
+            ctx.lineTo(500, 90);
+            ctx.lineWidth = 5;
+            ctx.strokeStyle = 'blue';
+            ctx.stroke();
+        </script>
+    </body>
+</html>

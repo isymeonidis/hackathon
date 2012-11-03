@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <style>
+            body {
+                margin: 0px;
+                padding: 0px;
+                width:100%;
+                background-color: #353535;
+            }
+            .wrapp{
+                width:600px;
+                height: 250px;
+                margin: 0px auto;
+                position: relative;
+            }
+            #myCanvas {
+                position: absolute;
+                left:117px;
+                top:126px;
+                background-color:#ff0000;
+            }
+            .img_bg {
+                position: absolute;
+                left:0;
+                top:0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrapp">
+            <canvas id="myCanvas" width="425" height="48"></canvas>
+            <div class="img_bg"><img src="img/img.png" /></div>
+        </div>
+        <script>
+            var canvas = document.getElementById("myCanvas");
+            var context = canvas.getContext("2d");
+        </script>
+    </body>
+</html>
