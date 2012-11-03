@@ -33,24 +33,33 @@
             <img class="img_bg" src="img/img.png" />
         </div>
         <script>
+            var itemY = 71;
+           
+            var canvasHeight = 48;
             var data = {
-                population: {
-                    2000: 10917.48,
-                    2005: 11103.96,
-                    2008: 11237.09,
-                    2009: 11282.76,
-                    2010: 11307.5,
-                    2011: 11312.16
-                }
+                2000: 10917.48,
+                2005: 11103.96,
+                2008: 11237.09,
+                2009: 11282.76,
+                2010: 10000.5,
+                2011: 11312.16
             }
-            for (var i=0;i<6;i++){
-                console.log(data.population[i]);
-            }
+            
             var c=document.getElementById("myCanvas");
             var ctx=c.getContext("2d");
-            ctx.moveTo(0,24);
-            ctx.lineTo(71,24);
+            var counter = 1;
+            var itemX; 
             ctx.strokeStyle = 'blue';
+            ctx.moveTo(0,24);
+            for (var prop in data) {
+                if(counter == 1){
+                    itemX = 24;
+                }else{
+                   itemX = (data[prop] > itemX) ? itemX - 2 : itemX + 2; 
+                }
+                ctx.quadraticCurveTo(itemY, itemY, itemY*counter,itemX);
+                counter++;
+            }
             ctx.stroke();
         </script>
     </body>
