@@ -18,7 +18,7 @@
                 position: absolute;
                 left:117px;
                 top:126px;
-                background-color:#ff0000;
+                background-color:#fff;
             }
             .img_bg {
                 position: absolute;
@@ -29,12 +29,29 @@
     </head>
     <body>
         <div class="wrapp">
-            <canvas id="myCanvas" width="425" height="48"></canvas>
-            <div class="img_bg"><img src="img/img.png" /></div>
+            <canvas id="myCanvas" width="426" height="48"></canvas>
+            <img class="img_bg" src="img/img.png" />
         </div>
         <script>
-            var canvas = document.getElementById("myCanvas");
-            var context = canvas.getContext("2d");
+            var data = {
+                population: {
+                    2000: 10917.48,
+                    2005: 11103.96,
+                    2008: 11237.09,
+                    2009: 11282.76,
+                    2010: 11307.5,
+                    2011: 11312.16
+                }
+            }
+            for (var i=0;i<6;i++){
+                console.log(data.population[i]);
+            }
+            var c=document.getElementById("myCanvas");
+            var ctx=c.getContext("2d");
+            ctx.moveTo(0,24);
+            ctx.lineTo(71,24);
+            ctx.strokeStyle = 'blue';
+            ctx.stroke();
         </script>
     </body>
 </html>
