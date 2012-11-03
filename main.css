@@ -1,0 +1,110 @@
+body
+{
+    margin: 0px;
+    padding: 0px;
+    width:100%;
+    background-color: #353535;
+}
+
+    #main
+    {
+       margin:0 auto;
+       width:600px;
+       height:250px;
+       background-color:#353535;   
+       position:relative;
+    }
+    
+        #title
+        {
+            width:600px;
+            height:60px;
+            color:#5b5b5b;
+            font: normal 36px Helvetica;
+            color: #5b5b5b;
+            text-align: center;
+            line-height: 60px;
+            
+        }
+        
+            #basic_categories
+            {
+                width:550px;
+                height:40px;
+                padding-left: 50px;
+                //background-color: aqua;      
+            }
+            
+                .basic_category_item
+                {
+                    color:#777;
+                    font: bold 12px  Helvetica;
+                    float:left;
+                    line-height: 40px;
+                    padding: 0 5px;
+                }
+                
+                .basic_category_item:hover
+                {
+                    color:#5b5b5b;
+                    background-color: #c5c4c4;
+                }
+                
+            #main_banner
+            {
+                width:600px;
+                height: 105px;
+            }
+            
+                #vertical_categories
+                {
+                    margin: 0px;
+                    padding: 0px;
+                    width:110px;
+                    color:#fff;
+                    height: 105px;
+                    float:left;
+                }
+                
+                    .vertical_categories_item
+                    {
+                        padding-left: 40px;
+                        width:70px;
+                        height: 35px;
+                        font: bold 13px Helvetica;
+                        text-align: left;
+                        line-height: 35px;
+                    }
+                    
+                    .vertical_categories_item:hover
+                    {
+                        color:#000;
+                    }
+                    
+               #population
+               {
+                   width:490px;
+                   font:bold 60px Helvetica;
+                   float:left;
+                   text-align: center;
+                   line-height: 105px;
+                   color:#fff;
+               }
+               
+               #years
+               {
+                   width:440px;
+                   height: 20px;
+                   padding-left: 160px;
+                   line-height: 20px;
+                       
+               }
+            
+                .year_item
+                {
+                    padding-right:22px;
+                    font:bold 12px Helvetica;
+                    float: left;
+                    color:#fff;
+                }
+            
