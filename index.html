@@ -35,7 +35,7 @@
         <script>
             var itemY = 71;
             var canvasHeight = 48;
-            var data = {
+            var population = {
                 2000: 10917.48,
                 2005: 11103.96,
                 2008: 11237.09,
@@ -49,8 +49,8 @@
             var itemX, lastY, firstX; 
             ctx.strokeStyle = 'blue';
             ctx.moveTo(0,44);
-            for (var prop in data) {
-                itemX = opisitNum(rangeCalc(Math.round(data[prop])));
+            for (var prop in population) {
+                itemX = opisitNum(rangeCalc(Math.round(population[prop])));
                 console.log(itemX);
                 lastY = itemY*counter;
                 ctx.lineTo(itemY*counter,itemX);             
